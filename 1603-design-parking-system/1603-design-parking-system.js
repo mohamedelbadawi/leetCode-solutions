@@ -7,6 +7,11 @@ var ParkingSystem = function(big, medium, small) {
     this.big=big;
     this.medium=medium;
     this.small=small;
+      this.obj={
+      1:big,
+      2:medium,
+      3:small
+  };
 };
 
 /** 
@@ -14,32 +19,13 @@ var ParkingSystem = function(big, medium, small) {
  * @return {boolean}
  */
 ParkingSystem.prototype.addCar = function(carType) {
-    if(carType==1){
-     if(this.big>0){
-         this.big-=1
-         return true
-     }   
-        else{
-            return false
-        }
-    }
-    else  if(carType==2){
-     if(this.medium>0){
-         this.medium-=1
-         return true
-     }   
-        else{
-            return false
-        }
-    }
-      if(carType==3){
-     if(this.small>0){
-         this.small-=1
-         return true
-     }   
-        else{
-            return false
-        }
+
+  if(this.obj[carType]>0){
+      this.obj[carType]-=1
+      return true
+  }
+    else{
+        return false
     }
 };
 
