@@ -4,9 +4,6 @@
  * @param {number} small
  */
 var ParkingSystem = function(big, medium, small) {
-    this.big=big;
-    this.medium=medium;
-    this.small=small;
       this.obj={
       1:big,
       2:medium,
@@ -21,7 +18,7 @@ var ParkingSystem = function(big, medium, small) {
 ParkingSystem.prototype.addCar = function(carType) {
 
   if(this.obj[carType]>0){
-      this.obj[carType]-=1
+      this.obj[carType]--
       return true
   }
     else{
